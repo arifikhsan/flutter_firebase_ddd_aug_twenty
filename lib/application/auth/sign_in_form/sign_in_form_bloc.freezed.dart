@@ -20,9 +20,9 @@ class _$SignInFormEventTearOff {
   }
 
 // ignore: unused_element
-  PasswordChanged passwordChanged(String emailString) {
+  PasswordChanged passwordChanged(String passwordString) {
     return PasswordChanged(
-      emailString,
+      passwordString,
     );
   }
 
@@ -49,7 +49,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -57,7 +57,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -162,7 +162,7 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -179,7 +179,7 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -244,7 +244,7 @@ abstract class $PasswordChangedCopyWith<$Res> {
   factory $PasswordChangedCopyWith(
           PasswordChanged value, $Res Function(PasswordChanged) then) =
       _$PasswordChangedCopyWithImpl<$Res>;
-  $Res call({String emailString});
+  $Res call({String passwordString});
 }
 
 class _$PasswordChangedCopyWithImpl<$Res>
@@ -259,37 +259,40 @@ class _$PasswordChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailString = freezed,
+    Object passwordString = freezed,
   }) {
     return _then(PasswordChanged(
-      emailString == freezed ? _value.emailString : emailString as String,
+      passwordString == freezed
+          ? _value.passwordString
+          : passwordString as String,
     ));
   }
 }
 
 class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.emailString) : assert(emailString != null);
+  const _$PasswordChanged(this.passwordString) : assert(passwordString != null);
 
   @override
-  final String emailString;
+  final String passwordString;
 
   @override
   String toString() {
-    return 'SignInFormEvent.passwordChanged(emailString: $emailString)';
+    return 'SignInFormEvent.passwordChanged(passwordString: $passwordString)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is PasswordChanged &&
-            (identical(other.emailString, emailString) ||
+            (identical(other.passwordString, passwordString) ||
                 const DeepCollectionEquality()
-                    .equals(other.emailString, emailString)));
+                    .equals(other.passwordString, passwordString)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailString);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(passwordString);
 
   @override
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
@@ -299,7 +302,7 @@ class _$PasswordChanged implements PasswordChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -309,14 +312,14 @@ class _$PasswordChanged implements PasswordChanged {
     assert(registerWithEmailAndPasswordPressed != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
-    return passwordChanged(emailString);
+    return passwordChanged(passwordString);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -324,7 +327,7 @@ class _$PasswordChanged implements PasswordChanged {
   }) {
     assert(orElse != null);
     if (passwordChanged != null) {
-      return passwordChanged(emailString);
+      return passwordChanged(passwordString);
     }
     return orElse();
   }
@@ -371,9 +374,9 @@ class _$PasswordChanged implements PasswordChanged {
 }
 
 abstract class PasswordChanged implements SignInFormEvent {
-  const factory PasswordChanged(String emailString) = _$PasswordChanged;
+  const factory PasswordChanged(String passwordString) = _$PasswordChanged;
 
-  String get emailString;
+  String get passwordString;
   $PasswordChangedCopyWith<PasswordChanged> get copyWith;
 }
 
@@ -419,7 +422,7 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -436,7 +439,7 @@ class _$RegisterWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -537,7 +540,7 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -554,7 +557,7 @@ class _$SignInWithEmailAndPasswordPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),
@@ -650,7 +653,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result emailChanged(String emailString),
-    @required Result passwordChanged(String emailString),
+    @required Result passwordChanged(String passwordString),
     @required Result registerWithEmailAndPasswordPressed(),
     @required Result signInWithEmailAndPasswordPressed(),
     @required Result signInWithGooglePressed(),
@@ -667,7 +670,7 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailString),
-    Result passwordChanged(String emailString),
+    Result passwordChanged(String passwordString),
     Result registerWithEmailAndPasswordPressed(),
     Result signInWithEmailAndPasswordPressed(),
     Result signInWithGooglePressed(),

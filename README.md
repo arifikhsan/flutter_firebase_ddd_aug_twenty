@@ -18,4 +18,6 @@ samples, guidance on mobile development, and a full API reference.
 ## Commands
 
 flutter pub run build_runner build
+flutter pub run build_runner watch
+flutter pub run build_runner build --delete-conflicting-outputs
 flutter pub run build_runner watch --delete-conflicting-outputs

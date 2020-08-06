@@ -1,9 +1,13 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_firebase_ddd_aug/domain/core/value_failures.dart';
 
+@immutable
 abstract class ValueObject<T> {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
+
+  bool isValid() => value.isRight();
 
   @override
   bool operator ==(Object o) {
