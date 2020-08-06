@@ -6,7 +6,9 @@ import 'package:flutter_firebase_ddd_aug/domain/auth/auth_facade_interface.dart'
 import 'package:flutter_firebase_ddd_aug/domain/auth/value_objects.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/auth_failure.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: AuthFacadeInterface)
 class FirebaseAuthFacade implements AuthFacadeInterface {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
@@ -21,8 +23,8 @@ class FirebaseAuthFacade implements AuthFacadeInterface {
     @required EmailAddress emailAddress,
     @required Password password,
   }) async {
-    final emailAddressString = emailAddress.getOrCrash();
-    final passwordString = password.getOrCrash();
+    final emailAddressString = emailAddress.getOrCrash() as String;
+    final passwordString = password.getOrCrash() as String;
 
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -44,8 +46,8 @@ class FirebaseAuthFacade implements AuthFacadeInterface {
     @required EmailAddress emailAddress,
     @required Password password,
   }) async {
-    final emailAddressString = emailAddress.getOrCrash();
-    final passwordString = password.getOrCrash();
+    final emailAddressString = emailAddress.getOrCrash() as String;
+    final passwordString = password.getOrCrash() as String;
 
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
@@ -68,7 +70,7 @@ class FirebaseAuthFacade implements AuthFacadeInterface {
     try {
       final googleUser = await _googleSignIn.signIn();
       if (googleUser == null) {
-        return left(AuthFailure.cancelledByUser());
+        return left(const AuthFailure.cancelledByUser());
       }
 
       final googleAuthentication = await googleUser.authentication;
