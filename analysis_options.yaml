@@ -4,3 +4,6 @@ analyzer:
   exclude: 
     - lib/**/*.freezed.dart
     - lib/**/*.iconfig.dart
+
+  errors:
+    sort_unnamed_constructors_first: ignore
