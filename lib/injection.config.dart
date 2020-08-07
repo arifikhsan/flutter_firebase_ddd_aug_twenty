@@ -9,6 +9,7 @@ import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import 'application/auth/auth_bloc.dart';
 import 'domain/auth/auth_facade_interface.dart';
 import 'infrastructure/auth/firebase_auth_facade.dart';
 import 'infrastructure/core/firebase_injectable_module.dart';
@@ -29,6 +30,7 @@ GetIt $initGetIt(
   gh.lazySingleton<AuthFacadeInterface>(
       () => FirebaseAuthFacade(get<FirebaseAuth>(), get<GoogleSignIn>()));
   gh.factory<SignInFormBloc>(() => SignInFormBloc(get<AuthFacadeInterface>()));
+  gh.factory<AuthBloc>(() => AuthBloc(get<AuthFacadeInterface>()));
   return get;
 }
 

@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/auth_facade_interface.dart';
+import 'package:flutter_firebase_ddd_aug/domain/auth/user.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/value_objects.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/auth_failure.dart';
 import 'package:flutter_firebase_ddd_aug/infrastructure/auth/firebase_user_mapper.dart';
@@ -89,7 +90,7 @@ class FirebaseAuthFacade implements AuthFacadeInterface {
   }
 
   @override
-  Future<Option> getSignedInUser() {
+  Future<Option<User>> getSignedInUser() {
     return _firebaseAuth
         .currentUser()
         .then((firebaseUser) => optionOf(firebaseUser?.toDomain()));

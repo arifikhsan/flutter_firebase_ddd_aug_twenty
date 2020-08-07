@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/auth_failure.dart';
+import 'package:flutter_firebase_ddd_aug/domain/auth/user.dart';
 import 'package:flutter_firebase_ddd_aug/domain/auth/value_objects.dart';
 
 abstract class AuthFacadeInterface {
